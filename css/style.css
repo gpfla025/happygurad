@@ -1,0 +1,1017 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+
+/*윈도우에는 root가 안먹혀서 색 다 넣어줘야되는지 알아보기*/
+:root {
+  --primary-color: #1a4570;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+body {
+  color: #333;
+  line-height: 1.6;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(29, 29, 29);
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 10px 0;
+}
+
+p {
+  margin: 40px 0;
+}
+
+/* navbar start */
+
+.navbar {
+  background-color: #1a4570; /*윈도우에서는 여기 색이 안나와서 root말고 진짜 색 넣어줌*/
+  color: #fff;
+  height: 80px;
+}
+
+.navbar ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px;
+  margin: 0 5px;
+}
+
+.navbar a:hover {
+  border-bottom: 1px #fff solid;
+}
+
+.navbar .logo img {
+  width: 80px;
+  height: 35px;
+  position: relative;
+}
+
+/*enterform page*/
+
+.enterform .form-control {
+  margin: 30px, 0;
+  font-size: 17px;
+}
+
+.enterform input[type="textarea address"] {
+  border: 0;
+  border-bottom: 2px solid #b4becb;
+  width: 70%;
+  font-size: 18px;
+  padding: 5px;
+}
+.enterform input[type="textarea"] {
+  border: 0;
+  border-bottom: 2px solid #b4becb;
+  width: 50%;
+  font-size: 18px;
+  padding: 5px;
+}
+
+.enterform input[type="tel"] {
+  border: 0;
+  border-bottom: 2px solid #b4becb;
+  width: 10%;
+  padding: 5px;
+  font-size: 18px;
+}
+
+.enterform input[type="text"],
+.enterform input[type="idnum"],
+.enterform input[type="password"] {
+  border: 0;
+  border-bottom: 2px solid #b4becb;
+  width: 25%;
+  padding: 5px;
+  font-size: 18px;
+}
+
+.title-form {
+  font-size: 20px;
+  margin: 10px, 0;
+}
+
+.description {
+  font-size: 16px;
+  padding-bottom: 15px;
+}
+
+textarea {
+  font-size: 18px;
+  width: 500px;
+  height: 100px;
+  resize: vertical;
+}
+
+select {
+  font-size: 18px;
+  height: 30px;
+  margin-right: 30px;
+  margin-left: 10px;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1800px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.slide {
+  display: none;
+}
+
+.slide img {
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -140px;
+  padding: 50px;
+  color: rgba(36, 36, 36, 0.5);
+  font-weight: bold;
+  font-size: 60px;
+  -webkit-transition: 0.6s ease;
+  -o-transition: 0.6s ease;
+  transition: 0.6s ease;
+  border-radius: 1px 1px 1px 1px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 5px 0 0 5px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+}
+
+/* Caption text */
+.slide button {
+  position: absolute;
+  top: 75%;
+  display: block;
+  margin: 0px 50px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 0;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 50px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.slide button:hover {
+  -webkit-transform: scale(0.98);
+  -ms-transform: scale(0.98);
+  transform: scale(0.98);
+}
+
+/* Number text (1/4 etc) */
+.numbertext {
+  color: #fff;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+
+.dots {
+  width: 100%;
+  height: 11px;
+  bottom: 12px;
+  position: absolute;
+  text-align: center;
+  z-index: 99;
+}
+
+.dot {
+  top: -20px;
+  width: 13px;
+  height: 13px;
+  margin: 0 4px;
+  position: relative;
+  border-radius: 50%;
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.active,
+.dot:hover {
+  background-color: #d8d8d8;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* elements */
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0px auto;
+}
+
+.section {
+  width: 100%;
+  padding: 0 10px;
+  box-sizing: border-box;
+  position: relative;
+  margin-bottom: 0px;
+}
+
+.text {
+  color: #333;
+}
+
+.leftArea {
+  position: relative;
+  display: inline-block;
+  float: left;
+  width: 50%;
+  height: 100%;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+.rightArea {
+  position: relative;
+  display: inline-block;
+  float: right;
+  width: 50%;
+  height: 100%;
+  padding-left: 20px;
+  box-sizing: border-box;
+}
+
+.manual {
+  padding: 6px 6px;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+  border: 1px solid #fff;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+}
+.manual:hover {
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  background-color: #367dc3;
+}
+
+/*section 1 -start*/
+
+.section1 {
+  width: 100%;
+  position: relative;
+  height: 250px;
+  background-color: #f8f8f8;
+}
+
+.section1 .text {
+  position: absolute;
+  top: 38%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  border: 3px solid #fff;
+  text-align: center;
+  box-sizing: border-box;
+  min-width: 100px;
+  padding: 5px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* .section1 .sims:hover */
+.section1 .sims_gaia .text:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.section1 .sims_gaia .manual {
+  position: absolute;
+  left: 20%;
+  top: 60%;
+  transform: translateX(-50%);
+}
+
+.section1 .sims_gaia .sims {
+  top: 55%;
+}
+
+.section1 .sims_gaia .gaia {
+  left: 70%;
+  top: 60%;
+}
+
+.sims_gaia .m-home .text {
+  left: 30%;
+  top: 50%;
+}
+.sims_gaia .sell-home .text {
+  left: 70%;
+  top: 50%;
+}
+
+.gaia img {
+  transform: translate(-50%, -50%);
+  position: absolute;
+  border: 3px solid #fff;
+  min-width: 80px;
+  padding: 5px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+  border-radius: 10px;
+  left: 70%;
+  top: 36%;
+}
+
+.gaia img:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/*section 2 -start*/
+
+.section2 {
+  height: 100px;
+  padding: 0px;
+}
+
+.section2 a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  box-sizing: border-box;
+}
+
+.section2 a:hover {
+  border: 5px solid rgba(12, 62, 119, 0.8);
+}
+
+.section2 .text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #333;
+  font-size: 20px;
+}
+
+/*section 2 line border*/
+
+.section2 .leftArea {
+  padding: 10px 0px 10px 10px;
+  background-color: #f0f0f0;
+}
+
+.section2 .rightArea {
+  padding: 10px 10px 10px 0px;
+  background-color: #f0f0f0;
+}
+
+/*section 2 emerg-call페이지*/
+
+.emergency {
+  margin-bottom: 20px;
+}
+.emergency .card a {
+  color: #047aed;
+}
+.emergency .card {
+  height: 80px;
+  width: 330px;
+  padding: 10px;
+  justify-content:center;
+  margin: 10px;
+}
+.emergency img {
+  height: 50px;
+}
+.emergency .btn {
+  margin:0;
+  margin-left: 40px;
+  padding: 10px 20px;
+}
+
+
+/*section 3 blueSquare*/
+
+.blueSquare {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #3366cc;
+  background-color: #3366cc;
+  border-radius: 10px;
+  margin: 3px 10px;
+}
+
+.section h2 {
+  display: inline-block;
+  font-size: 20px;
+}
+
+.card h4 {
+  font-size: 15px;
+  margin: 10px;
+}
+
+.card a {
+  color: #333;
+}
+
+.section3 .flex {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.section3 .container .card {
+  text-align: center;
+  background-color: #ffffff;
+  transition: transform 0.2s ease-in;
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  margin: 15px;
+}
+
+.section3 .card:hover {
+  background-color: #eeeeee;
+  transform: translateY(-5px);
+}
+
+/*section4 start*/
+
+.section4 .flex {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.section4 .container .card {
+  text-align: center;
+  height: 100px;
+  width: 150px;
+  padding: 0;
+  margin: 10px 5px 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in;
+}
+
+.section4 .card img {
+  width: 80%;
+}
+
+.section4 .card:hover {
+  background-color: rgb(230, 230, 230);
+  color: #000;
+  transform: translateY(-5px);
+}
+
+/*section5 start-캘린더*/
+.section5 {
+  height: 100%;
+  margin: 10px;
+  margin-bottom: 50px;
+}
+
+#calendar {
+  max-width: 1100px;
+  margin: auto;
+}
+
+#loading {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.calendar_categories .categories_color {
+  display: flex;
+}
+
+.ND {
+  background-color: #40aae3;
+  color: white;
+  padding: 5px 10px;
+  margin: 0px 5px 15px;
+  border-radius: 5px;
+}
+
+.holiday {
+  background-color: #ff3636;
+  color: white;
+  padding: 5px 10px;
+  margin: 0px 5px 15px;
+  border-radius: 5px;
+}
+
+.DG {
+  background-color: #8e4bcc;
+  color: white;
+  padding: 5px 10px;
+  margin: 0px 5px 15px;
+  border-radius: 5px;
+}
+
+/* 다운로드페이지 */
+/* 다운로드-소개 */
+.download-detail {
+  height: 290px; /*다운로드 있는 곳 바 크기*/
+  background-color: #1a4570; /*윈도우에서는 여기 색이 안나와서 root말고 진짜 색 넣어줌*/
+  color: #fff;
+  position: relative;
+}
+
+.download-text {
+  margin-left: 40px;
+}
+
+.download-detail h1 {
+  font-size: 40px;
+  margin-top: 30px;
+}
+
+.download-detail p {
+  font-size: 18px;
+  margin: 15px 0;
+}
+
+.download-form {
+  position: relative;
+  top: 2px; /*더 내리고 싶을때*/
+  height: 280px;
+  width: 280px;
+  z-index: 100;
+  justify-self: flex-end;
+  text-align: center;
+  padding: 30px;
+  overflow: visible;
+  margin-right: 70px;
+}
+
+.download-form a {
+  color: white;
+}
+
+/* 다운로드-menu*/
+.section6 {
+  width: 100%;
+  position: relative;
+  height: 1100px;
+}
+
+.section6 .leftArea {
+  position: relative;
+  display: inline-block;
+  width: 24%;
+  height: 100%;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+.section6 .rightArea {
+  position: relative;
+  display: inline-block;
+  width: 76%;
+  height: 100%;
+  padding-left: 20px;
+  box-sizing: border-box;
+}
+
+.commission-detail {
+  text-align: center;
+}
+
+.commission-detail a {
+  color: #fff;
+}
+
+.download-menu .card {
+  height: auto;
+  padding: 20px;
+  margin-left: 3%;
+  background-color: #fcfcfc;
+  border: 3px solid;
+}
+.download-menu ul {  
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.download-menu li {  
+  margin: 10px;
+}
+
+.download-menu a:hover {
+  color: #3366cc;
+  font-weight: 600;
+}
+
+.download-description .card {
+  height: auto;
+  padding: 20px;
+  margin-left: 3%;
+}
+
+.alert-success li {
+  margin-left: 40px;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+.require-document li {
+  margin-left: 40px;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+.require-document {
+  background-color: #f0eeee;
+  color: #000;
+  padding: 10px 20px;
+  margin: 10px 0;
+}
+
+.require-document i {
+  margin-right: 10px;
+}
+
+.download-doc .flex {
+  flex-wrap: wrap;
+}
+
+.download-doc a {
+  color: #fff;
+}
+
+/*위촉서류 양식제출*/
+.listup a {
+  color: #333;
+}
+
+.listup li {
+  margin: 10px;
+}
+
+.listup a:hover {
+  color: #3366cc;
+}
+
+.sub-description {
+  margin: 50px;
+  color: red;
+}
+
+/*생보다운로드페이지*/
+
+.section7 {
+  margin: 20px;
+}
+
+.doc .btn {
+  display: block;
+  text-align: center;
+}
+
+.section7 .manual {
+  margin-left: 50px;  
+  padding: 10px;
+}
+
+.doc-individual .btn {
+  margin: 4px;
+  padding: 10px;
+  
+}
+
+
+
+
+/*footer*/
+
+.footer {
+  background-color: #1a4570; /*윈도우에서는 여기 색이 안나와서 root말고 진짜 색 넣어줌*/
+  color: #fff;
+  height: 80px;
+}
+
+.footer ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px;
+  margin: 0 5px;
+}
+
+.footer a:hover {
+  border-bottom: 1px #fff solid;
+}
+
+/*Tablets and under*/
+@media (max-width: 780px) {
+  /*section2*/
+  .section2 {
+    height: 70px;
+    padding: 0px;
+  }
+
+  .section2 .text {
+    font-size: 15px;
+  }
+
+  /*section3*/
+  .card h4 {
+    font-size: 14px;
+    margin: 5px;
+  }
+
+  .section3 .container .card {
+    padding: 3px;
+    margin: 8px 4px;
+  }
+
+  /*section4*/
+  .section4 .container .card {
+    height: 85px;
+    width: 120px;
+    padding: 0;
+    margin: 8px 5px 8px;
+  }
+
+  /*다운로드*/
+  .download-detail .leftArea {
+    width: 50%;
+    height: auto;
+  }
+  .download-text p {
+    font-size: 15px;
+  }
+
+  .download-form {    
+    right: 5%;
+    margin: 0;
+    height: 250px;
+    width: 260px;
+  }
+
+  .download-form p {
+    font-size: 15px;
+    margin: 10px;
+  }
+  .download-form a {
+    font-size: 15px;
+  }
+
+  .download-menu {
+    position: relative;
+  }
+
+  .download-description {
+    position: relative;
+    top: 0%;    
+  }
+ 
+}
+
+/*mobile*/
+@media (max-width: 600px) {
+  /*navbar*/
+  .navbar {
+    height: 120px;
+  }
+
+  .navbar .flex {
+    flex-direction: column;
+    -ms-flex-direction: column;
+  }
+
+  .navbar ul {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar img {
+    display: none;
+  }
+
+  /*slide*/
+  .prev,
+  .next {
+    top: 50%;
+    margin-top: -45px;
+    padding: 10px;
+    font-size: 40px;
+  }
+
+  /*left right*/
+  .leftArea {
+    padding-right: 0px;
+  }
+
+  .rightArea {
+    padding-left: 0px;
+  }
+
+  /*section1*/
+  .manual {
+    padding: 5px 5px;
+    font-size: 11px;
+  }
+  .section1 .text {
+    min-width: auto;
+    padding: 5px 10px;
+  }
+
+  .section1 h2 {
+    margin: 0;
+    font-size: 15px;
+  }
+
+  .sim .text {
+    left: 50%;
+    top: 15%;
+  }
+
+  .section1 .sims_gaia .sims {
+    left: 50%;
+    top: 25%;
+  }
+
+  .gaia img {
+    min-width: 60px;
+    left: 50%;
+    top: 65%;
+  }
+
+  .section1 .sims_gaia .gaia {
+    left: 50%;
+    top: 80%;
+  }
+
+  .sims_gaia .m-home .text {
+    left: 50%;
+    top: 30%;
+  }
+  .sims_gaia .sell-home .text {
+    left: 50%;
+    top: 70%;
+  }
+
+  /*section2*/
+  .section2 .text {
+    font-size: 12px;
+  }
+
+  /*section3*/
+  .card h4 {
+    font-size: 12px;
+    margin: 3px;
+  }
+
+  .section3 .container .card {
+    padding: 3px;
+    margin: 6px 4px;
+  }
+
+  /*section4*/
+  .section4 .container .card {
+    height: 70px;
+    width: 100px;
+    padding: 0;
+    margin: 8px 5px 8px;
+  }
+
+  /*footer*/
+
+  .container h2 {
+    font-weight: 500;
+    font-size: 20px;
+  }
+  .footer .container a {
+    font-size: 13px;
+  }
+
+
+  /*다운로드*/
+ /*다운로드*/
+  .download-detail .leftArea {
+    width: 100%;
+    height: auto;
+  }
+  
+  .download-text p {
+    font-size: 15px;
+  }
+
+  .download-form {    
+    right: 20%;
+    padding-left: 30px;
+    height: 250px;
+    width: 260px;
+  }
+  .download-form p {
+    font-size: 15px;
+    margin: 10px;
+  }
+
+  .download-form a {
+    font-size: 16px;
+  }
+
+  .download-menu {
+    position: relative;
+    top: 15%;
+  }
+
+  .download-menu ul {
+  display:list-item;
+  }
+
+  .download-menu h3 {
+    font-size: 16px;
+  }
+
+  .download-description {
+    position: relative;
+    top: 15%;    
+  }
+
+  .download-doc .btn {
+    margin: 2px;
+  } 
+
+
+  .form {
+    position: relative;
+    margin-top:40%;
+  }
