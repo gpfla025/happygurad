@@ -50,12 +50,35 @@
     <!--download -->
     <div class="section section6">
         <div class="download-menu">
+            <div class="card">
+                <script>
+                    function FindIE() {
+
+                        var ua = window.navigator.userAgent;
+                        var msie = ua.indexOf("MSIE ");
+
+                        if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+                            document.write("<A target='_balnk' HREF='microsoft-edge:https://www.notion.so/bef8060946ba4e90b1cc5fa86894b34f?v=6fe38070b04c45e29ccba1deab321c5f>'>생보위촉 일정확인</A>");
+
+                        }
+                        else {
+                            document.write("<A target='_balnk' HREF='https://www.notion.so/bef8060946ba4e90b1cc5fa86894b34f?v=6fe38070b04c45e29ccba1deab321c5f>'>생보위촉 일정확인</A>");
+                        }
+
+                        return false;
+                    }
+                    FindIE()
+                </script>
+            </div>
+        </div>
+        <div class="download-menu">
             <div class="card">                
                     <ul>
                         <li><a href="#">위촉서류</a></li>
                         <li><a href="id-form.html">입사지원자신청</a></li>
                         <li><a href="car-form.html">주차신청/변경</a></li>
                         <li><a href="test-form.html">생손보시험신청</a></li>
+                        <li><a href="certification-form.html">증명서 발급요청</a></li>
                     </ul>
             </div>
         </div>
