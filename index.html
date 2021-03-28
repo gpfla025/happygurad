@@ -494,14 +494,11 @@
                                 color: '#ff3636'
                             }
                         ],
-                        loading: function (bool) {
-                        jQuery("#loading").toggle(bool);
-                        },
-
-                        eventClick: function (event) {
+                        
+                        eventClick: function (arg) {
                             // opens events in a popup window
-                            window.open(event.url, 'gcalevent', 'width=400,height=300');
-                            return false;
+                            window.open(arg.event.url, 'google-calendar-event', 'width=400,height=300');
+                            arg.jsEvent.preventDefault() // don't navigate in main tab
                         },
 
                         loading: function (bool) {
