@@ -14,7 +14,8 @@
         <link rel="stylesheet" href="./css/style.css" />
         <link rel="stylesheet" href="./css/fonts.css" />
         <link rel="stylesheet" href="./css/utilities.css" />
-        <link href='../css/calendar/main.min.css' rel='stylesheet' />
+        <link href='./fullcalendar-2.9.1/fullcalendar.css' rel='stylesheet' />
+        <link href='./fullcalendar-2.9.1/fullcalendar.print.css' rel='stylesheet' media='print' />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
         <link rel="icon" href="./favicon.ico" type="image/x-icon">
         <meta name="naver-site-verification" content="b4f159db8a2543262533a20402806e65fc5a214f" />
@@ -382,18 +383,14 @@
                 <div class="calendar_categories">
                     <div class="categories_color">                 
                         <div class="ND">
-                            <h4>내당일정</h4>
-                            <!--<label>
-                            <input type="checkbox" class="swingBar" value="내당" onChange="scheduleChoice(0);" checked />
-                            &nbsp;내당
-                            </label>-->
+                            <!--<h4>내당일정</h4>-->
+                            <input type="checkbox" class="swingBar" onChange="scheduleChoice(0, 'k5hafmnrce0lom8pbrlbhdedck@group.calendar.google.com', '내당', '#40aae3', '#ffffff');" checked>
+                            내당일정
                         </div>
                         <div class="DG">
-                            <h4>대구일정</h4>
-                            <!--<label>
-                                <input type="checkbox" class="swingBar" value="대구" onChange="scheduleChoice(1);" checked />
-                                &nbsp;대구
-                            </label>-->
+                            <!--<h4>대구일정</h4>-->
+                            <input type="checkbox" class="swingBar" onChange="scheduleChoice(1, 'jj8n9a4o02b0n28ot0v5ac6l4c@group.calendar.google.com', '대구', '#b236ff', '#ffffff');" checked>
+                            대구일정
                         </div>
                     </div>
                 </div>
@@ -458,62 +455,53 @@
                         </ul>
                     </nav>                    
                 </div>
-            </footer>            
-            <script src="./js/slider.js"></script>            
-            <script src='./js/calendar/main.js'></script>
-            <script src='./js/calendar/locales/ko.js'></script>    
+            </footer>  
+            <script src="./js/slider.js"></script>
+            <script src='./fullcalendar-2.9.1/lib/moment.min.js'></script>
+            <script src='./fullcalendar-2.9.1/lib/jquery.min.js'></script>
+            <script src='./fullcalendar-2.9.1/fullcalendar.min.js'></script>
+            <script src='./fullcalendar-2.9.1/gcal.js'></script>
+            <script src='./fullcalendar-2.9.1/lang-all.js'></script>
 
             <script>                
-                document.addEventListener('DOMContentLoaded', function () {
-                    var calendarEl = document.getElementById('calendar');
-                
-                    var calendar = new FullCalendar.Calendar(calendarEl, {
-                        locale: 'ko',
-                        initialView: 'dayGridMonth',                        
-                        weekNumbers: 'true',                        
-                        nowIndicator: true,
-                        headerToolbar: {
-                            left: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek',
-                            center: 'title',
-                            right: 'prevYear,prev,next,nextYear'
+                $(document).ready(function () {
+
+                    $('#calendar').fullCalendar({
+                        header: {
+                            left: "prev",
+                            center: "title",
+                            right: "next"
                         },
-                        footerToolbar: {
-                            left: 'title',
-                            center: '',
-                            right: 'prev,next'
-                        },
-                        
-                        navLinks: true, // can click day/week names to navigate views                    
+                        lang: "ko",
                         editable: false,
                         selectable: true,
-                        selectMirror: true,
-                        dayMaxEvents: true,
+                        eventLimit: true,
 
                         googleCalendarApiKey: 'AIzaSyDw80OkpYtdYdT0yMSrS_vQXeUXZ_cn3uM',
 
-                        eventSources: [
 
-                            
+                        eventSources: [
                             {
                                 googleCalendarId: 'k5hafmnrce0lom8pbrlbhdedck@group.calendar.google.com',
                                 className: '내당',
-                                color: '#40aae3'
-                                
-
+                                color: '#40aae3',
                             },
                             {
-                                googleCalendarId: 'jj8n9a4o02b0n28ot0v5ac6l4c@group.calendar.google.com',
+                            googleCalendarId: 'jj8n9a4o02b0n28ot0v5ac6l4c@group.calendar.google.com',
                                 className: '대구',
-                                color: '#b236ff'
-
+                                color: '#b236ff',
                             },
                             {
                                 googleCalendarId: 'ko.south_korea#holiday@group.v.calendar.google.com',
                                 className: 'ko-event',
                                 color: '#ff3636'
-                                
                             }
                         ],
+                        loading: function (bool) {
+                        jQuery("#loading").toggle(bool);
+                        },
+                        
+                    
                         // addEventSource, removeEventSource의 기능하는데 구별값은 googleCalendarId 이다.
                         // 그렇기에 googleCalendarId는 반드시 입력해야한다.
                         
@@ -526,10 +514,18 @@
                         loading: function (bool) {
                             document.getElementById('loading').style.display =
                                 bool ? 'block' : 'none';
-                        }
+                        }                        
+                                            
                     });
-                    calendar.render();
+                    
                 });
+                function scheduleChoice(num, id, distinct, color, text) {
+                    if (jQuery(".swingBar").eq(num).is(":checked")) {
+                        jQuery("#calendar").fullCalendar("addEventSource", { googleCalendarId: id, className: distinct, color: color, textColor: text });
+                    } else {
+                        jQuery("#calendar").fullCalendar("removeEventSource", { googleCalendarId: id });
+                    }
+                }
             </script>
             
 
