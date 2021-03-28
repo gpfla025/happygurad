@@ -889,6 +889,11 @@ select {
   .navbar img {
     display: none;
   }
+  /*calendar*/
+  #calendar {
+  height: 100%;  
+  margin: auto;
+}
 
   /*slide*/
   .prev,
