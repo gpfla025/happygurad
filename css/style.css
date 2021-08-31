@@ -684,9 +684,10 @@ select {
   background-color: #fcfcfc;
   border: 3px solid;
 }
-.download-menu ul {  
-  display: -webkit-box;
-  display: -ms-flexbox;
+.download-menu ol{  
+  margin-left: 30px;
+}
+.download-menu ul{  
   display: flex;
 }
 .download-menu li {  
@@ -993,8 +994,8 @@ select {
   }
 
 
-  /*다운로드*/
- /*다운로드*/
+  /*양식*/
+  /*양식*/
   .download-detail .leftArea {
     width: 100%;
     height: auto;
@@ -1021,7 +1022,6 @@ select {
 
   .download-menu {
     position: relative;
-    top: 15%;
   }
 
   .download-menu ul {
