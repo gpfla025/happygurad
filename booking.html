@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/utilities.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/fonts.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link href='./fullcalendar-2.9.1/fullcalendar.css' rel='stylesheet' />
+    <link href='./fullcalendar-2.9.1/fullcalendar.print.css' rel='stylesheet' media='print' />
+    <title>엠금융 대구 업무지원</title>
+</head>
+
+<body>
+    <!--Navbar-->
+    <div class="navbar">
+        <div class="container flex">
+            <a href="index.html" div class="logo">
+                <img src="./img/img_logo/logo.png" alt="">
+            </a>
+            <h2 class="logo_text"><a href="index.html">엠금융 대구 업무지원</a></h2>
+            <nav>
+                <ul>
+                    <li><a href="index.html">홈</a></li>
+                    <li><a href="forms.html">양식</a></li>
+                    <li><a href="booking.html">예약</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!--download file page-->
+    <section class="download-detail">
+        <div class="download-text leftArea">
+            <h1>숙소예약</h1>
+            <p>
+                제주도 숙소예약을 할 수 있는 페이지 입니다.<br>예약하기를 클릭하면 예약 할 수있습니다!<br> <b>주의사항을 잘 읽어주시고 진행해주세요.</b>
+            </p>
+            <ul>
+                <script>
+                    function FindIE() {
+                        var ua = window.navigator.userAgent;
+                        var msie = ua.indexOf("MSIE ");
+                        if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+                            document.write("<A target='_balnk' HREF='microsoft-edge:https://forms.gle/w4Eustu98sUZTRWP8' class='btn btn-primary'>예약하기</A>");
+                        }
+                        else {
+                            document.write("<A target='_balnk' HREF='https://forms.gle/w4Eustu98sUZTRWP8' class='btn btn-primary'>예약하기</A>");
+                        }
+                        return false;
+                    }
+                    FindIE()
+                </script>
+            </ul>
+        </div>
+    </section>
+
+    <!--download -->
+    <div class="section section6">
+        <div class="download-menu">
+            
+                <section class="section section5">
+                    <div class="blueSquare"></div>
+                    <h2 class="md text-center my-2">예약현황</h2>
+                    <div id='loading'>loading...</div>
+                    <div id='calendar'></div>
+                </section>
+            
+        </div>
+    </div>
+
+    <script src='./fullcalendar-2.9.1/lib/moment.min.js'></script>
+    <script src='./fullcalendar-2.9.1/lib/jquery.min.js'></script>
+    <script src='./fullcalendar-2.9.1/fullcalendar.min.js'></script>
+    <script src='./fullcalendar-2.9.1/gcal.js'></script>
+    <script src='./fullcalendar-2.9.1/lang-all.js'></script>
+    
+    <script>
+        $(document).ready(function () {
+
+            $('#calendar').fullCalendar({
+                header: {
+                    left: "prev",
+                    center: "title",
+                    right: "next"
+                },
+                lang: "ko",
+                editable: false,
+                selectable: true,
+                eventLimit: true,
+                googleCalendarApiKey: 'AIzaSyDw80OkpYtdYdT0yMSrS_vQXeUXZ_cn3uM',
+                eventSources: [
+                    {
+                        googleCalendarId: 'foose4pdqjf2fl0ea01nku4hro@group.calendar.google.com',
+                        className: '아덴힐예약',
+                        color: '#red',
+                    }
+                ],
+
+                eventClick: function (arg) {
+                    // opens events in a popup window
+                    window.open(arg.event.url, 'google-calendar-event', 'width=400,height=300');
+                    arg.jsEvent.preventDefault() // don't navigate in main tab
+                },
+
+                loading: function (bool) {
+                    $('#loading').toggle(bool);
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
+
