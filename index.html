@@ -57,14 +57,15 @@
                         href="./doc-download/manual/manual_sims.pdf">SIMS 메뉴얼</a>
                     <!--GAIA-->
                     <div class="gaia">
-                        <a target="_blank" href="http://ap2.gaiasystem.co.kr/mfweb/">
+                        <a target="_blank" onclick="button1_click();">
                             <img src="./img/img_logo/gaia_icon-01.png" alt="GAIA">
                         </a>
+
                     </div>
                     <a class="manual gaia" target="_blank" onclick="button1_click();">GAIA 메뉴얼</a>
                     <script>
                         function button1_click() {
-                            alert("가이아 메뉴얼을 준비중입니다");
+                            alert("준비중입니다");
                         }
                     </script>
                 </div>
@@ -385,12 +386,12 @@
                     <div class="categories_color">                 
                         <div class="ND">
                             <!--<h4>내당일정</h4>-->
-                            <input type="checkbox" class="swingBar" onChange="scheduleChoice(0, 'k5hafmnrce0lom8pbrlbhdedck@group.calendar.google.com', '내당', '#40aae3', '#ffffff');" checked>
+                            <input type="checkbox" class="swingBar" onChange="scheduleChoice(0, 'k5hafmnrce0lom8pbrlbhdedck@group.calendar.google.com', '엠금융 내당', '#40aae3', '#ffffff');" checked>
                             광개토
                         </div>
                         <div class="DG">
                             <!--<h4>대구일정</h4>-->
-                            <input type="checkbox" class="swingBar" onChange="scheduleChoice(1, 'jj8n9a4o02b0n28ot0v5ac6l4c@group.calendar.google.com', '대구', '#b236ff', '#ffffff');" checked>
+                            <input type="checkbox" class="swingBar" onChange="scheduleChoice(1, 'jj8n9a4o02b0n28ot0v5ac6l4c@group.calendar.google.com', '엠금융 대구', '#b236ff', '#ffffff');" checked>
                             대구
                         </div>
                     </div>
@@ -477,17 +478,16 @@
                         editable: false,
                         selectable: true,
                         eventLimit: true,
-                        contentHeight: auto,
                         googleCalendarApiKey: 'AIzaSyDw80OkpYtdYdT0yMSrS_vQXeUXZ_cn3uM',
                         eventSources: [
                             {
                                 googleCalendarId: 'k5hafmnrce0lom8pbrlbhdedck@group.calendar.google.com',
-                                className: '내당',
+                                className: '엠금융 내당',
                                 color: '#40aae3',
                             },
                             {
                             googleCalendarId: 'jj8n9a4o02b0n28ot0v5ac6l4c@group.calendar.google.com',
-                                className: '대구',
+                                className: '엠금융 대구',
                                 color: '#b236ff',
                             },
                             {
