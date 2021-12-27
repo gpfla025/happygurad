@@ -44,7 +44,26 @@
         <div class="download-menu">
             <div class="card">
                 <ul>
-                    <li><a href="./doc-download/금소법 이행 확인서(FP용).pdf">금소법 이행확인서</a></li>
+                    <li>
+                        <script>
+                            function FindIE() {
+
+                                var ua = window.navigator.userAgent;
+                                var msie = ua.indexOf("MSIE ");
+
+                                if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+                                    document.write("<A target='_balnk' HREF='microsoft-edge:https://zesty-entrance-b92.notion.site/48514dc8f82347b59fadcae3ce0a0a13'>위촉일정 확인하기</A>");
+
+                                }
+                                else {
+                                    document.write("<A target='_balnk' HREF='https://zesty-entrance-b92.notion.site/48514dc8f82347b59fadcae3ce0a0a13'>위촉일정 확인하기</A>");
+                                }
+
+                                return false;
+                            }
+                            FindIE()
+                        </script>
+                    </li>
                 </ul>
             </div>
         </div>
