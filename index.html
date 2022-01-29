@@ -405,6 +405,86 @@
                 <div id='calendar'></div>            
             </section>
         </div>
+        
+        <!--전략전제휴 tab-->
+        <section class="section section5">
+            <div class="blueSquare"></div>
+            <h2 class="md text-center my-2">제휴업체 안내</h2>
+            <!-- Tab links -->
+            <div class="tab-total">
+                <div class="tab">
+                    <button class="tablinks" onclick="tabMenu(event, 'DIRECT')" id="defaultOpen">다이렉트보험</button>
+                    <button class="tablinks" onclick="tabMenu(event, 'MUTUALAID')">상조</button>
+                    <button class="tablinks" onclick="tabMenu(event, 'MEDICAL')">의료</button>
+                    <button class="tablinks" onclick="tabMenu(event, 'CAR')">차량관리</button>
+                    <button class="tablinks" onclick="tabMenu(event, 'EXTRA')">기타</button>
+                </div>
+
+                <!-- Tab content -->
+                <div id="DIRECT" class="tabcontent">
+                    <div class="sub-tabcontent">
+                        <h3>차팀장</h3>
+                        <li>별도교육</li>
+                        <li>DB,현대,KB,한화,악사 다이렉트</li>
+                        <li>설계사 수수료 6%</li>
+                        <li>문의: 장호열 </li>
+                        <div class="btn btn-outline"><a href="tel:010-3509-8886">통화바로하기</a></div>
+                    </div>
+                </div>
+
+                <div id="MUTUALAID" class="tabcontent">
+                    <div class="sub-tabcontent">
+                        <h3>금오상조의전</h3>
+                        <li>후불제 상조</li>
+                        <li>최고급 리무진 무료제공</li>
+                        <li>전국 네트워킹으로 어디든 가능</li>
+                        <li>문의: 이상환 대표 </li>
+                        <div class="btn btn-outline"><a href="tel:010-6560-9393">통화바로하기</a></div>
+
+                        <h3>프리드라이프</h3>
+                        <li>선불제 상조</li>
+                        <li>한국고객만족도 1위</li>
+                        <li>수당 7배</li>
+                        <li>문의: 최정호 지점장 </li>
+                        <div class="btn btn-outline"><a href="tel:010-3708-2833">통화바로하기</a></div>
+                    </div>
+                </div>
+
+                <div id="MEDICAL" class="tabcontent">
+                    <div class="sub-tabcontent">
+                        <h3>여성메티파크</h3>
+                        <li>하이푸수술</li>
+                        <li>특실제공(일반실 → 특실 업그레이드)</li>
+                        <li>수성구와 달서구 2곳에 위치</li>
+                        <li>문의: 여준혁 이사 </li>
+                        <div class="btn btn-outline"><a href="tel:010-3526-6224">통화바로하기</a></div>
+                        <div class="btn btn-outline"><a href="https://www.md-park.co.kr/">홈페이지</a></div>
+                    
+                        <h3>효성병원</h3>
+                        <li>건강검진권 저렴하게 구매가능</li>
+                        <li>주소: 대구 수성구 수성로 194</li>
+                        <li>문의: 김유석 이사 </li>
+                        <div class="btn btn-outline"><a href="tel:010-8980-4404">통화바로하기</a></div>
+                        <div class="btn btn-outline"><a href="https://www.hshospital.co.kr/">홈페이지</a></div>
+                    </div>
+                </div>
+
+                <div id="CAR" class="tabcontent">
+                    <h3>차량관리</h3>
+                    <p>-</p>
+                </div>
+
+                <div id="EXTRA" class="tabcontent">
+                    <div class="sub-tabcontent">
+                        <h3>방역업체 더존</h3>
+                        <li>식당, 유치원, 어린이집 의무가입</li>
+                        <li>기존 업체보다 저렴한 비용보장</li>
+                        <li>문의: 황보욱 대표 </li>
+                        <div class="btn btn-outline"><a href="tel:010-2809-8234">통화바로하기</a></div>
+                    </div>
+                </div>
+                </div>
+        </section>
         <!-- Slideshow container -->
         <div class="slideshow-container">
         
@@ -462,7 +542,8 @@
                         </ul>
                     </nav>                    
                 </div>
-            </footer>  
+            </footer>
+            <script src="./js/tabs.js"></script>
             <script src="./js/slider.js"></script>
             <script src='./fullcalendar-2.9.1/lib/moment.min.js'></script>
             <script src='./fullcalendar-2.9.1/lib/jquery.min.js'></script>

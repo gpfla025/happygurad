@@ -612,6 +612,59 @@ select {
   border-radius: 5px;
 }
 
+/* tabs-전략적제휴*/
+/* Style the tab */
+.tab-total {
+  border: 1px solid #e8ebee;
+  border-radius: 6px;
+}
+.tab {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  box-shadow: 0 1px 1px 0 rgb(0 0 0 / 3%);
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ddd;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 12px 12px;
+  border-top: none;
+  box-shadow: 0 1px 1px 0 rgb(0 0 0 / 3%);
+}
+
+.tabcontent .sub-tabcontent {
+  padding: 10px 30px;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.tabcontent .sub-tabcontent li {
+  list-style-type: none;
+  margin: 10px;
+}
+
 /* 다운로드페이지 */
 /* 다운로드-소개 */
 .download-detail {
