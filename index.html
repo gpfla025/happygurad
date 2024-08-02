@@ -87,7 +87,7 @@
                     </div>
                 </div>
             </div>
-
+        
             <!-- 생손보_업무분장, 엠금융대구_업무분장 -->
             <div class="section section2">
                 <div class="leftArea"> 
@@ -99,6 +99,29 @@
                     </a>
                 </div>
             </div>
+
+            <!--캘린더-->
+            <section class="section section5">
+                <div class="blueSquare"></div>
+                <h2 class="md text-center my-2">캘린더</h2>
+                <div class="calendar_categories">
+                    <div class="categories_color">
+                        <div class="Chong-cal">
+                            <!--<h4>내근일정</h4>-->
+                            <input type="checkbox" class="swingBar" onChange="scheduleChoice(0, '94940db706f8889eaf176bb93f3f4ec98482d420848db4e9a4d2be0b245056a3@group.calendar.google.com', '라온사업부 총무', '#4058e3', '#ffffff');" checked/>
+                            내근직 연차
+                        </div>
+                        <div class="holiday">
+                            <!--<h4>대한민국 휴일</h4>-->
+                            <input type="checkbox" class="swingBar" onChange="scheduleChoice(0, '94940db706f8889eaf176bb93f3f4ec98482d420848db4e9a4d2be0b245056a3@group.calendar.google.com', '공휴일', '#ff3636', '#ffffff');" checked/>
+                            공휴일
+                        </div>
+                    </div>
+                </div>
+                <div id='loading'>loading...</div>
+                <div id='calendar'></div>            
+            </section>
+        </div>
 
             <!-- 포털 -->
             <section class="section section-poter">
@@ -406,34 +429,6 @@
                 </div>
             </section>
 
-            <!--캘린더-->
-            <section class="section section5">
-                <div class="blueSquare"></div>
-                <h2 class="md text-center my-2">캘린더</h2>
-                <div class="calendar_categories">
-                    <div class="categories_color">                 
-                        <div class="ND">
-                            <!--<h4>내당일정</h4>-->
-                            <input type="checkbox" class="swingBar" onChange="scheduleChoice(0, 'k5hafmnrce0lom8pbrlbhdedck@group.calendar.google.com', '엠금융 내당', '#40aae3', '#ffffff');" checked/>
-                            광개토
-                        </div>
-                        <div class="DGfifth">
-                            <!--<h4>대구5층일정</h4>-->
-                            <input type="checkbox" class="swingBar" onChange="scheduleChoice(1, 'jj8n9a4o02b0n28ot0v5ac6l4c@group.calendar.google.com', '엠금융 대구5층', '#b236ff', '#ffffff');" checked/>
-                            대구5층
-                        </div>
-                        <div class="DGthird">
-                            <!--<h4>대구3층일정</h4>-->
-                            <input type="checkbox" class="swingBar" onChange="scheduleChoice(2, 'd7o2qbqnes2ndojrbn787k683s@group.calendar.google.com', '엠금융 대구3층', '#034719', '#ffffff');" checked/>
-                            대구3층
-                        </div>
-                    </div>
-                </div>
-                <div id='loading'>loading...</div>
-                <div id='calendar'></div>            
-            </section>
-        </div>
-        
         <!--전략전제휴 tab-->
         <section class="section section5">
             <div class="blueSquare"></div>
@@ -597,21 +592,10 @@
                         googleCalendarApiKey: 'AIzaSyDw80OkpYtdYdT0yMSrS_vQXeUXZ_cn3uM',
                         eventSources: [
                             {
-                                googleCalendarId: 'k5hafmnrce0lom8pbrlbhdedck@group.calendar.google.com',
-                                className: '엠금융 내당',
-                                color: '#40aae3',
-                            },
-                            {
-                                googleCalendarId: 'jj8n9a4o02b0n28ot0v5ac6l4c@group.calendar.google.com',
-                                className: '엠금융 대구5층',
-                                color: '#b236ff',
-                            },
-                            {
-                                googleCalendarId: 'd7o2qbqnes2ndojrbn787k683s@group.calendar.google.com',
-                                className: '엠금융 대구3층',
-                                color: '#034719',
-                            },
-                            
+                                googleCalendarId: '94940db706f8889eaf176bb93f3f4ec98482d420848db4e9a4d2be0b245056a3@group.calendar.google.com',
+                                className: '라온사업부 내근직 연차',
+                                color: '#4058e3',
+                            },                            
                             {
                                 googleCalendarId: 'ko.south_korea#holiday@group.v.calendar.google.com',
                                 className: 'ko-event',
